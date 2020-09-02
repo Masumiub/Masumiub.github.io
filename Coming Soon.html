@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang= "en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>ShowCase</title>
+    <link rel="stylesheet" href="Comingstyle.css">
+    </head>
+    <body>
+        
+        
+        <video autoplay muted loop id="myVideo">
+        <source src="Pexels%20Videos%202439510.mp4" type="video/mp4">
+        </video>
+    <div class= "container_2">
+        <h1>Showcase</h1>
+        <h2>We are coming soon</h2>
+        
+        <div class="count">
+            
+            <div class="countd"> 
+            <span id="days">00</span>
+                Days
+            </div>
+            
+            <div class="countd"> 
+            <span id="hours">00</span>
+                Hours
+            </div>
+            
+            <div class="countd"> 
+            <span id="minutes">00</span>
+                Minutes
+            </div>
+            
+            <div class="countd"> 
+            <span id="seconds">00</span>
+                Seconds
+            </div>
+            
+        </div>
+        
+        </div>
+        
+        
+<script>
+        var count = new Date("dec 1,2020 00:00:00").getTime();
+    var x = setInterval(function(){
+        var now = new Date().getTime();
+        var d = count - now;
+        
+        var days= Math.floor(d/(1000*60*60*24));
+        
+        var hours= Math.floor((d%(1000*60*60*24))/(1000*60*60));
+         
+        var minutes = Math.floor((d%(1000*60*60))/(1000*60));
+        
+        var seconds= Math.floor((d%(1000*60))/1000);
+                              
+        document.getElementById("days").innerHTML= days;
+        document.getElementById("hours").innerHTML= hours;
+        document.getElementById("minutes").innerHTML= minutes;
+        document.getElementById("seconds").innerHTML= seconds;
+        
+        if(d<=0){
+            clearInterval(x);
+        }
+        
+    },1000)
+        
+        
+        </script>
+        <audio src="Chillout%20Lounge%20Background%20Music%20for%20Video%20%5BRoyalty%20Free%5D.mp3" autoplay loop volume="30%"></audio>
+    </body>
+
+</html>
